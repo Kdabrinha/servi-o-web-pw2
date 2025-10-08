@@ -1,10 +1,30 @@
-function Home (){
-    return <> 
-        <h1>filmes</h1>
-        
-        <p>Listagem de filmes aqui - </p>
+import {filmes} from "../data/filmes.js"
 
+
+function Home (){
+    console.log(filmes)
+
+    const primeirofilme = filmes [1];
+    const estiloimagem = {width: "300px"};
+    return <> 
+        <h1>Filmes</h1>
+        
+        <ul>
+            <li>
+                <p> Nome do filme :</p>
+
+                <p>{primeirofilme .titulo}</p>
+                <p>{primeirofilme .ano}</p>
+                <p>{primeirofilme .genero}</p>
+                <p>{primeirofilme .nota}</p>
+
+                <img style={estiloimagem} src = {primeirofilme.poster}/>
+            </li>
+
+        </ul>
     </>
+
+
 
 }
 
