@@ -1,30 +1,24 @@
 import {filmes} from "../data/filmes.js"
+import CardFilme from '../componentes/CardFilme'
 
-function CardFilme({filme}) {
-    const estiloimagem = {width: "300px"};
-
-    return (
-    
-        <li >
-            <p>Titulo: {filme .titulo}</p>
-            <p>Ano: {filme .ano}</p>
-            <p>Gênero: {filme .genero}</p>
-            <p>Nota: {filme .nota}</p>
-
-            <img style={estiloimagem} src = {filme.poster}/>
-        </li>
-    
-    );
-}
 
 
 function Home (){
+  
     
+    const estilolistaCard = {
+        display: "grid",
+        gridTemplateColumns : "repeat(auto-fit, minmax(200px, 1fr))",
+        gap:"16px",
+        listStyle: "none",
+        background:'black'
+    };
     
     return <> 
-        <h1>Filmes</h1>
+       
+        <h1 color="red">Filmes</h1>
         
-        <ul>
+        <ul style={estilolistaCard} >
             {
                 filmes.map(( filme )=> {
                     return (
